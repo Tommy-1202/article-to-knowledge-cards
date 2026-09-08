@@ -61,6 +61,7 @@ Apply these rules strictly:
 5. **Don't pad.** Target **5–8 cards**. If the source only justifies 3 high-quality cards, output 3. Never invent cards to hit a number.
 6. **Prefer source examples.** When the source already gives an example, reuse it (paraphrased, not copied verbatim if the source is long). Only generate a derived example when the source provides enough material to support it without fabrication.
 7. **Title discipline.** Titles are short noun phrases (≤ 12 Chinese characters / 6 English words), not full sentences. Avoid colons and rhetorical questions.
+8. **No source paths or user-identifying strings in metadata.** The `来源:` field must contain only the literal token `inline`, the bare filename, or `<source>`. Never write absolute paths, file system layout, Windows / Linux usernames, home directory tokens (`~`, `/Users`, `C:/Users`), or the original file's download id into the output. This prevents accidental leakage of user-identifying filesystem information when the deck is shared or published.
 
 ## Workflow
 
@@ -80,7 +81,7 @@ Output only the deck, no preamble. Structure:
 ```
 # 知识卡片: {Short Title Derived from Source}
 
-> 来源: {inline | file path} · 共 {N} 张卡片
+> 来源: {inline | 文件名 | <source>} · 共 {N} 张卡片
 
 ### 1. {Title}
 ...
