@@ -1,0 +1,38 @@
+# Local tooling / agent metadata — never publish
+.codebuddy/
+.workbuddy/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / temp
+*.tmp
+*.bak
+*.swp
+*~
+*.orig
+*.swo
+*.log
+*.out
+*.err
+
+# Python (project doesn't use today, but cheap insurance)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node (project doesn't use today, but cheap insurance)
+node_modules/
+.npm/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
